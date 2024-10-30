@@ -1,29 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimonDice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="SimonDice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images-removebg-preview.png" translatesAutoresizingMaskIntoConstraints="NO" id="So5-B8-rCk">
+                                <rect key="frame" x="46" y="308" width="300" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="imvSplash" destination="So5-B8-rCk" id="eaP-mP-lYq"/>
+                        <segue destination="pOR-9h-C3F" kind="presentation" identifier="SgSplash" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Upr-q2-kls"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-27"/>
+            <point key="canvasLocation" x="-315" y="-38"/>
+        </scene>
+        <!--Juego View Controller-->
+        <scene sceneID="74J-yH-3dN">
+            <objects>
+                <viewController id="pOR-9h-C3F" customClass="JuegoViewController" customModule="SimonDice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XAT-S5-yo6">
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simon Dice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxM-qV-Jjc">
+                                <rect key="frame" x="134.66666666666666" y="10" width="170.99999999999997" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="7DV-MB-KbX"/>
+                                    <constraint firstAttribute="width" constant="171" id="cur-RD-ZCa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1s-y7-Tnr">
+                                <rect key="frame" x="138" y="898" width="164" height="48"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="QdP-vL-QsD"/>
+                                    <constraint firstAttribute="width" constant="164" id="bW0-IG-bfO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="JUGAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="empezarJuego" destination="pOR-9h-C3F" eventType="touchUpInside" id="uh1-sX-kNY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pS-l4-s7z">
+                                <rect key="frame" x="35.666666666666657" y="72" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ARZ-4t-HuE"/>
+                                    <constraint firstAttribute="height" constant="150" id="Cmq-CX-t4V"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpInside" id="bm9-si-1mC"/>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpOutside" id="xjl-oL-fAP"/>
+                                    <action selector="EncenderBoton:" destination="pOR-9h-C3F" eventType="touchDown" id="xLT-Ye-sHx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.60000002384185791" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VU4-KE-e4S">
+                                <rect key="frame" x="255" y="72" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ADS-3F-cUf"/>
+                                    <constraint firstAttribute="width" constant="150" id="GvP-JY-YBc"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpInside" id="bK7-VP-L7h"/>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpOutside" id="dlY-BF-4CX"/>
+                                    <action selector="EncenderBoton:" destination="pOR-9h-C3F" eventType="touchDown" id="PTa-rB-GlE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulQ-Wc-Prv">
+                                <rect key="frame" x="255" y="252" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="EaT-Ob-Ujl"/>
+                                    <constraint firstAttribute="width" constant="150" id="qnL-zq-UCg"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpOutside" id="Nzj-ft-OCs"/>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpInside" id="i5U-i5-2aA"/>
+                                    <action selector="EncenderBoton:" destination="pOR-9h-C3F" eventType="touchDown" id="SRh-DL-YGb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22j-4c-lwq">
+                                <rect key="frame" x="35" y="252" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Q9d-Oq-77X"/>
+                                    <constraint firstAttribute="width" constant="150" id="Qju-eA-haB"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpInside" id="2TC-0A-NNg"/>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpOutside" id="oBi-oo-07L"/>
+                                    <action selector="EncenderBoton:" destination="pOR-9h-C3F" eventType="touchDown" id="541-hA-U6D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TYb-nw-ncG"/>
+                        <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="22j-4c-lwq" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="0.5" id="4nr-jl-0up"/>
+                            <constraint firstItem="TYb-nw-ncG" firstAttribute="bottom" secondItem="s1s-y7-Tnr" secondAttribute="bottom" constant="10" id="IMK-S3-wlq"/>
+                            <constraint firstItem="0pS-l4-s7z" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="0.5" constant="0.5" id="KM9-0h-ZK1"/>
+                            <constraint firstItem="VU4-KE-e4S" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="1.5" id="NyN-DQ-4Ez"/>
+                            <constraint firstItem="s1s-y7-Tnr" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" id="PDT-zb-CI9"/>
+                            <constraint firstItem="22j-4c-lwq" firstAttribute="top" secondItem="0pS-l4-s7z" secondAttribute="bottom" constant="30" id="bzP-y7-szH"/>
+                            <constraint firstItem="UxM-qV-Jjc" firstAttribute="top" secondItem="TYb-nw-ncG" secondAttribute="top" constant="10" id="gfP-f6-nBm"/>
+                            <constraint firstItem="VU4-KE-e4S" firstAttribute="top" secondItem="UxM-qV-Jjc" secondAttribute="bottom" constant="20" id="imP-Km-Qwk"/>
+                            <constraint firstItem="0pS-l4-s7z" firstAttribute="top" secondItem="UxM-qV-Jjc" secondAttribute="bottom" constant="20" id="kpQ-Ug-55P"/>
+                            <constraint firstItem="ulQ-Wc-Prv" firstAttribute="top" secondItem="0pS-l4-s7z" secondAttribute="bottom" constant="30" id="mR8-tI-Fli"/>
+                            <constraint firstItem="UxM-qV-Jjc" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" id="py0-gB-Cca"/>
+                            <constraint firstItem="ulQ-Wc-Prv" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="1.5" id="u7Y-EB-vvx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnJugar" destination="s1s-y7-Tnr" id="w69-54-sM7"/>
+                        <outletCollection property="btnsTablero" destination="0pS-l4-s7z" collectionClass="NSMutableArray" id="smx-VK-GcE"/>
+                        <outletCollection property="btnsTablero" destination="VU4-KE-e4S" collectionClass="NSMutableArray" id="gM3-rm-yNn"/>
+                        <outletCollection property="btnsTablero" destination="22j-4c-lwq" collectionClass="NSMutableArray" id="01D-zP-Tyi"/>
+                        <outletCollection property="btnsTablero" destination="ulQ-Wc-Prv" collectionClass="NSMutableArray" id="p6h-Aq-kRy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gU6-bL-VoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="394.09090909090912" y="-38.284518828451887"/>
         </scene>
     </scenes>
     <resources>
+        <image name="images-removebg-preview.png" width="225" height="225"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
