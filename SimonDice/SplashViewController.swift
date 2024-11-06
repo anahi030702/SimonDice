@@ -20,7 +20,19 @@ class SplashViewController: UIViewController
         let x = (view.frame.width - w)/2
         let y = -h
         
+        imvSplash.alpha = 0.0
         imvSplash.frame = CGRect(x: x, y: y, width: w, height: h)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 3.0) {
+            let y = (self.view.frame.height - self.imvSplash.frame.height) / 2.0
+            self.imvSplash.frame.origin.y = y
+            self.imvSplash.alpha = 1.0
+        }completion: { comp in
+            self.performSegue(withIdentifier: "SgSplash", sender: nil)
+        }
+
     }
 
 
