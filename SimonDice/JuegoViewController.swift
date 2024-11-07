@@ -27,6 +27,27 @@ class JuegoViewController: UIViewController {
 
     @IBAction func ApagarBoton(_ sender: UIButton) {
         sender.alpha = 0.6
+        
+        if sender.tag == secuencia[indice]{
+            indice += 1
+            
+            if indice >= secuencia.count{
+                vel -= 0.05
+                if vel < 0.05{
+                    vel = 0.05
+                }
+                habilitarTablero(false)
+                generarAleatorio()
+            }
+        }else{
+            //aqui ya perdio el usuario
+            let msj = UIAlertController(title: "PERDISTE", message: "Has logrado llegar hasta la ronda \(secuencia.count)", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Aceptar", style: .default)
+            msj.addAction(ok)
+            present(msj, animated: true)
+            btnJugar.isEnabled = true
+            habilitarTablero(false)
+        }
     }
     
     @IBAction func EncenderBoton(_ sender: UIButton) {
@@ -34,7 +55,9 @@ class JuegoViewController: UIViewController {
     }
     
     @IBAction func empezarJuego() {
-        //btnJugar.isEnabled = false
+        btnJugar.isEnabled = false
+        secuencia.removeAll()
+        vel = 0.5
         generarAleatorio()
     }
     
@@ -56,10 +79,20 @@ class JuegoViewController: UIViewController {
     func encender(){
         if indice < secuencia.count{
             btnsTablero[secuencia[indice]].alpha = 1.0
+            Timer.scheduledTimer(withTimeInterval: vel, repeats: false) { timer in
+                self.apagar()
+            }
+        }else{
+            indice = 0
+            habilitarTablero(true)
         }
     }
     
     func apagar(){
-        
+        btnsTablero[secuencia[indice]].alpha = 0.6
+        indice += 1
+        Timer.scheduledTimer(withTimeInterval: vel, repeats: false) { timer in
+            self.encender()
+        }
     }
 }

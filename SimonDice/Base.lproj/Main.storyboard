@@ -123,6 +123,34 @@
                                     <action selector="EncenderBoton:" destination="pOR-9h-C3F" eventType="touchDown" id="541-hA-U6D"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.59999999999999998" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0Q-6B-8uz">
+                                <rect key="frame" x="35" y="432" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="YrJ-Gh-NGX"/>
+                                    <constraint firstAttribute="width" constant="150" id="crL-8t-90R"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpOutside" id="OfL-2U-NHg"/>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpInside" id="n4y-kL-tPk"/>
+                                    <action selector="EncenderBoton:" destination="pOR-9h-C3F" eventType="touchDown" id="ZAX-FJ-v6D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UN9-T1-NjR">
+                                <rect key="frame" x="255" y="432" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1No-MO-DuI"/>
+                                    <constraint firstAttribute="height" constant="150" id="okc-uV-nQQ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpOutside" id="FZt-VA-egv"/>
+                                    <action selector="ApagarBoton:" destination="pOR-9h-C3F" eventType="touchUpInside" id="XFN-up-IgW"/>
+                                    <action selector="EncenderBoton:" destination="pOR-9h-C3F" eventType="touchDown" id="oxr-n1-als"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TYb-nw-ncG"/>
                         <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
@@ -132,12 +160,16 @@
                             <constraint firstItem="0pS-l4-s7z" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="0.5" constant="0.5" id="KM9-0h-ZK1"/>
                             <constraint firstItem="VU4-KE-e4S" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="1.5" id="NyN-DQ-4Ez"/>
                             <constraint firstItem="s1s-y7-Tnr" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" id="PDT-zb-CI9"/>
+                            <constraint firstItem="UN9-T1-NjR" firstAttribute="top" secondItem="ulQ-Wc-Prv" secondAttribute="bottom" constant="30" id="UQP-Jf-2On"/>
                             <constraint firstItem="22j-4c-lwq" firstAttribute="top" secondItem="0pS-l4-s7z" secondAttribute="bottom" constant="30" id="bzP-y7-szH"/>
+                            <constraint firstItem="f0Q-6B-8uz" firstAttribute="top" secondItem="ulQ-Wc-Prv" secondAttribute="bottom" constant="30" id="eCf-Iy-JZc"/>
+                            <constraint firstItem="f0Q-6B-8uz" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="0.5" id="fV4-QR-mWl"/>
                             <constraint firstItem="UxM-qV-Jjc" firstAttribute="top" secondItem="TYb-nw-ncG" secondAttribute="top" constant="10" id="gfP-f6-nBm"/>
                             <constraint firstItem="VU4-KE-e4S" firstAttribute="top" secondItem="UxM-qV-Jjc" secondAttribute="bottom" constant="20" id="imP-Km-Qwk"/>
                             <constraint firstItem="0pS-l4-s7z" firstAttribute="top" secondItem="UxM-qV-Jjc" secondAttribute="bottom" constant="20" id="kpQ-Ug-55P"/>
                             <constraint firstItem="ulQ-Wc-Prv" firstAttribute="top" secondItem="0pS-l4-s7z" secondAttribute="bottom" constant="30" id="mR8-tI-Fli"/>
                             <constraint firstItem="UxM-qV-Jjc" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" id="py0-gB-Cca"/>
+                            <constraint firstItem="UN9-T1-NjR" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="1.5" id="shj-00-9R7"/>
                             <constraint firstItem="ulQ-Wc-Prv" firstAttribute="centerX" secondItem="XAT-S5-yo6" secondAttribute="centerX" multiplier="1.5" id="u7Y-EB-vvx"/>
                         </constraints>
                     </view>
@@ -147,6 +179,8 @@
                         <outletCollection property="btnsTablero" destination="VU4-KE-e4S" collectionClass="NSMutableArray" id="gM3-rm-yNn"/>
                         <outletCollection property="btnsTablero" destination="22j-4c-lwq" collectionClass="NSMutableArray" id="01D-zP-Tyi"/>
                         <outletCollection property="btnsTablero" destination="ulQ-Wc-Prv" collectionClass="NSMutableArray" id="p6h-Aq-kRy"/>
+                        <outletCollection property="btnsTablero" destination="f0Q-6B-8uz" collectionClass="NSMutableArray" id="xpV-eE-NEH"/>
+                        <outletCollection property="btnsTablero" destination="UN9-T1-NjR" collectionClass="NSMutableArray" id="DAq-4C-vMo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU6-bL-VoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,11 +190,17 @@
     </scenes>
     <resources>
         <image name="images-removebg-preview.png" width="225" height="225"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
